@@ -652,11 +652,11 @@ describe('Store', () => {
       const unsubscribe = Store.listen((state) => {
         unsubscribe();
         expect(state.currentConnection).to.exist;
-        expect(state.currentConnection.sshTunnelPassphrase).to.equal('mongodb');
+        expect(state.currentConnection.sshTunnelAgent).to.equal('ssh-agent');
         done();
       });
 
-      Actions.onSSHTunnelAgentChanged('mongodb');
+      Actions.onSSHTunnelAgentChanged('ssh-agent1');
     });
   });
 

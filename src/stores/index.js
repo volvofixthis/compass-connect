@@ -48,6 +48,7 @@ const SSH_TUNNEL_FIELDS = [
   'sshTunnelBindToLocalPort',
   'sshTunnelUsername',
   'sshTunnelPassword',
+  'sshTunnelAgent',
   'sshTunnelIdentityFile',
   'sshTunnelPassphrase',
   'replicaSet'
@@ -784,9 +785,9 @@ const Store = Reflux.createStore({
   },
 
   /**
-   * Changes the SSH tunnel identity file.
+   * Changes the SSH Agent path.
    *
-   * @param {Array} files - The file.
+   * @param {String} agent - The path.
    */
   onSSHTunnelAgentChanged(agent) {
     this.state.currentConnection.sshTunnelAgent = agent;
