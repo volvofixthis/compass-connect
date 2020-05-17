@@ -170,7 +170,7 @@ class SSHTunnelIdentityFileValidation extends React.Component {
                     label="SSH Agent path"
                     id="sshTunnelAgent"
                     changeHandler={this.onSSHTunnelAgentChanged.bind(this)}
-                    values={this.props.currentConnection.sshTunnelAgent}
+                    value={this.props.currentConnection.sshTunnelAgent}
                 />
                 <FormFileInput
                     label="SSH Identity File"
