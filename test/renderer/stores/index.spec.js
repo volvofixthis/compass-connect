@@ -634,8 +634,21 @@ describe('Store', () => {
     });
   });
 
-  describe('#onSSHTunnelPassphraseChanged', () => {
-    it('updates the SSH Tunnel passphrase in the current connection model', (done) => {
+  describe('#onSSHTunnelPasswordChanged', () => {
+    it('updates the SSH Tunnel password in the current connection model', (done) => {
+      const unsubscribe = Store.listen((state) => {
+        unsubscribe();
+        expect(state.currentConnection).to.exist;
+        expect(state.currentConnection.sshTunnelPassword).to.equal('mongodb');
+        done();
+      });
+
+      Actions.onSSHTunnelPasswordChanged('mongodb');
+    });
+  });
+
+  describe('#onSSHTunnelAgentChanged', () => {
+    it('updates the SSH Agent path in the current connection model', (done) => {
       const unsubscribe = Store.listen((state) => {
         unsubscribe();
         expect(state.currentConnection).to.exist;
@@ -643,7 +656,7 @@ describe('Store', () => {
         done();
       });
 
-      Actions.onSSHTunnelPassphraseChanged('mongodb');
+      Actions.onSSHTunnelAgentChanged('mongodb');
     });
   });
 

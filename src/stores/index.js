@@ -788,6 +788,16 @@ const Store = Reflux.createStore({
    *
    * @param {Array} files - The file.
    */
+  onSSHTunnelAgentChanged(agent) {
+    this.state.currentConnection.sshTunnelAgent = agent;
+    this.trigger(this.state);
+  },
+
+  /**
+   * Changes the SSH tunnel identity file.
+   *
+   * @param {Array} files - The file.
+   */
   onSSHTunnelIdentityFileChanged(files) {
     this.state.currentConnection.sshTunnelIdentityFile = files;
     this.trigger(this.state);
