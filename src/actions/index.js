@@ -42,6 +42,7 @@ const Actions = Reflux.createActions({
   onSSHTunnelHostnameChanged: { sync: true },
   onSSHTunnelUsernameChanged: { sync: true },
   onSSHTunnelPortChanged: { sync: true },
+  onSSHTunnelAgentChanged: { sync: true },
   onSSHTunnelIdentityFileChanged: { sync: true },
   onSSHTunnelChanged: { sync: true },
   onSRVRecordToggled: { sync: true },
