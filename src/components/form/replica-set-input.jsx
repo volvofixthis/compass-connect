@@ -21,17 +21,14 @@ class ReplicaSetInput extends React.PureComponent {
   }
 
   render() {
-    const sshTunnel = this.props.sshTunnel;
 
-    if (sshTunnel === 'NONE' || !sshTunnel) {
-      return (
-        <FormInput
-          label="Replica Set Name"
-          name="replicaSet"
-          changeHandler={this.onReplicaSetChanged.bind(this)}
-          value={this.props.replicaSet || ''} />
-      );
-    }
+    return (
+    <FormInput
+        label="Replica Set Name"
+        name="replicaSet"
+        changeHandler={this.onReplicaSetChanged.bind(this)}
+        value={this.props.replicaSet || ''} />
+    );
 
     return null;
   }
